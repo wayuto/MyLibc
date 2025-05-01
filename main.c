@@ -1,7 +1,7 @@
 #include "include/stdio.h"
 #include "include/string.h"
 
-void main() {
+int main() {
     const char *filename = "hello.txt";
     char buffer[1024];
     ssize_t fd = open(filename, O_RDONLY, 0);
