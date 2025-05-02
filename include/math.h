@@ -3,6 +3,10 @@
  */
 #ifndef MATH_H
 #define MATH_H
+
+#include "stddef.h"
+
+/* Take the absolute number */
 int64_t abs(int64_t x) {
     return x > 0 ? x : -x;
 }
