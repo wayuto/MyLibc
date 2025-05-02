@@ -6,11 +6,10 @@
 #define O_CREAT     0100
 #define O_TRUNC     01000
 #define S_IRWXU     0700
-#define size_t unsigned long long int
-#define ssize_t unsigned long long int
 
 #include "stdarg.h"
 #include "convert.h"
+#include "stddef.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,7 @@ void printf(char *buffer, ...) {
                     break;
                 }
                 case 'd': {
-                    int v = va_arg(args, int);
+                    int64_t v = va_arg(args, int64_t);
                     char buf[32];
                     itoa(v, buf);
                     i++;
@@ -95,7 +94,7 @@ void scanf(const char *type, ...) {
         case 'd' : {
             char content[1024];
             cins(content);
-            int *buf = va_arg(args, int*);
+            int64_t *buf = va_arg(args, int64_t*);
             *buf = atoi(content);
             break;
         }

@@ -2,8 +2,9 @@
 #define CONVERT_H
 
 #include "string.h"
+#include "stddef.h"
 
-void itoa(int num, char *buffer) {
+void itoa(int64_t num, char *buffer) {
     int i = 0;
     int is_negative = 0;
 
@@ -13,7 +14,7 @@ void itoa(int num, char *buffer) {
     }
 
     do {
-        buffer[i++] = (num % 10) + '0';
+        buffer[i++] = num % 10 + '0';
         num /= 10;
     } while (num > 0);
 
@@ -36,15 +37,16 @@ void ftoa(double num, char *buffer) {
     itoa(int_part, buffer);
     strcat(buffer, ".");
 
-    frac_part *= 1e2;
-    char frac_buf[3];
+    for (int i = 0;(int)(frac_part * 10) != frac_part * 10 && i < 8;i++) frac_part *= 10;
+    frac_part *= 10;
+    char frac_buf[10];
     itoa(frac_part, frac_buf);
     strcat(buffer, frac_buf);
 }
 
 int atoi(const char *buffer) {
     int sign = 1;
-    int result = 0;
+    int64_t result = 0;
     while (*buffer == ' ' || *buffer == '\t' || *buffer == '\n' || *buffer == '\r' || *buffer == '\f' || *buffer == '\v')
         buffer++;
     if (*buffer == '-') {

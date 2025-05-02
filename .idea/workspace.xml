@@ -19,11 +19,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1ea1f6-7384-4647-a503-3c9ef3f12fbf" name="Changes" comment="Rsync">
-      <change afterPath="$PROJECT_DIR$/wcc.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libfile.o" beforeDir="false" afterPath="$PROJECT_DIR$/so/libfile.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libio.o" beforeDir="false" afterPath="$PROJECT_DIR$/so/libio.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/math.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/stddef.h" afterDir="false" />
+      <change afterPath="$USER_HOME$/Project/mylibc/include/math.h" afterDir="false" />
+      <change afterPath="$USER_HOME$/Project/mylibc/include/stddef.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/convert.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/convert.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/stdio.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/stdio.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../a.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Project/mylibc/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$USER_HOME$/Project/mylibc/README.md" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/README.md" afterDir="false" />
+      <change beforePath="$USER_HOME$/Project/mylibc/include/convert.h" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/include/convert.h" afterDir="false" />
+      <change beforePath="$USER_HOME$/Project/mylibc/include/stdio.h" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/include/stdio.h" afterDir="false" />
+      <change beforePath="$USER_HOME$/Project/mylibc/main.c" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +55,18 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/headers/arg.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -88,8 +108,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="main.c" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorkSpace" TARGET_NAME="main.c" CONFIG_NAME="main.c">
-      <option name="compilerOptions" value="lib/libio.o lib/libfile.o" />
+    <configuration name="main.c (1)" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorkSpace" TARGET_NAME="main.c (1)" CONFIG_NAME="main.c (1)">
+      <option name="compilerOptions" value="so/libio.so so/libfile.so -fno-builtin" />
       <option name="sourceFile" value="main.c" />
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
@@ -112,7 +132,7 @@
       <workItem from="1746064373122" duration="1695000" />
       <workItem from="1746066258410" duration="197000" />
       <workItem from="1746066502286" duration="227000" />
-      <workItem from="1746067128287" duration="25748000" />
+      <workItem from="1746067128287" duration="33657000" />
     </task>
     <task id="LOCAL-00001" summary="Rsync">
       <option name="closed" value="true" />
@@ -122,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746062703574</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Rsync">
+      <option name="closed" value="true" />
+      <created>1746109044380</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746109044380</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
