@@ -11,59 +11,82 @@ MyLibc is a lightweight implementation of the C Standard Library, designed to pr
 │   └── io.asm      # Assembly functions for basic input/output
 ├── include         # Header files for the C Standard Library
 │   ├── convert.h   # Type conversion functions
+│   ├── math.h      # Mathematical functions and constants
 │   ├── stdio.h     # Standard input/output functions
 │   ├── string.h    # String manipulation functions
 │   ├── stdbool.h   # Boolean type support
-│   └── stdarg.h    # Variadic argument support
+│   ├── stdarg.h    # Variadic argument support
+│   └── stddef.h    # Common macros and typedefs
 ├── so              # Directory for shared library files
 │   ├── libio.so    # Shared library for I/O operations
 │   ├── libfile.so  # Shared library for file operations
 ├── wcc.c           # Custom wrapper for GCC compilation
-├── setup.sh        # Setup script for environment variables and tool installation
-└── main.c          # Example usage of MyLibc
+├── main.c          # Example usage of MyLibc
+└── setup.sh        # Setup script for environment variables and tool installation
 ```
 
 ## Features
 
-### Assembly Implementations
-- **file.asm**
-  - `open`: Opens a file
-  - `read`: Reads content from a file
-  - `write`: Writes content to a file
-  - `close`: Closes a file
+### Type Conversion Functions (`convert.h`)
+This header provides functions for converting between various data types:
+- `itoa(int64_t, char*)`: Converts an integer to a string.
+- `ftoa(double, char*)`: Converts a floating-point number to a string.
+- `atoi(const char*)`: Converts a string to an integer.
+- `atof(const char*)`: Converts a string to a floating-point number.
 
-- **io.asm**
-  - `couts`: Outputs a string to standard output
-  - `cins`: Reads a string from standard input
-  - `exit`: Exits the program
+### Mathematical Functions (`math.h`)
+The `math.h` file includes common mathematical constants and functions for numerical operations.
 
-### Standard Library Implementations
-- **convert.h**
-  - `itoa`: Converts an integer to a string
-  - `ftoa`: Converts a floating-point number to a string
-  - `atoi`: Converts a string to an integer
-  - `atof`: Converts a string to a floating-point number
+#### Constants
+- `PI`: Approximate value of π (3.14159...)
+- `E`: Approximate value of e (2.71828...)
 
-- **stdio.h**
-  - `printf`: Formatted output function, supporting `%s`, `%d`, `%f`, and `%c`
-  - `scanf`: Formatted input function, supporting `%s`, `%d`, and `%f`
-  - File operation functions: `open`, `read`, `write`, `close`
-  - `exit`: Exits the program
+#### Functions
+- `abs(int64_t x)`: Returns the absolute value of a 64-bit integer.
+- `fabs(double x)`: Returns the absolute value of a double.
+- Logarithmic functions:
+  - `ln(double x)`: Computes the natural logarithm of `x`.
+  - `log(double b, double a)`: Computes the logarithm of `a` with base `b`.
+  - `lg(double x)`: Computes the base-10 logarithm of `x`.
+  - `lb(double x)`: Computes the base-2 logarithm of `x`.
+- Exponential functions:
+  - `exp(double x)`: Computes the exponential of `x`.
+  - `pow(double x, double y)`: Computes `x` raised to the power of `y`.
+- Rounding functions:
+  - `ceil(double x)`: Returns the smallest integer greater than or equal to `x`.
+  - `floor(double x)`: Returns the largest integer less than or equal to `x`.
+  - `round(double x)`: Rounds `x` to the nearest integer.
+- `sqrt(double x)`: Computes the square root of `x`.
+- `hypot(double x, double y)`: Computes the hypotenuse for the given `x` and `y`.
 
-- **string.h**
-  - `strlen`: Calculates the length of a string
-  - `strcmp`: Compares two strings for equality
-  - `strcpy`: Copies a string
-  - `strcat`: Concatenates two strings
-  - `strchr`: Finds the first occurrence of a character in a string
-  - `strrchr`: Finds the last occurrence of a character in a string
-  - `strstr`: Finds the first occurrence of a substring in a string
+### String Manipulation Functions (`string.h`)
+Provides functions for working with strings:
+- `strlen(const char*)`: Returns the length of a string.
+- `strcmp(const char*, const char*)`: Compares two strings for equality.
+- `strcpy(char*, const char*)`: Copies one string to another.
+- `strcat(char*, const char*)`: Appends one string to another.
+- `strchr(const char*, char)`: Finds the first occurrence of a character in a string.
+- `strrchr(const char*, char)`: Finds the last occurrence of a character in a string.
+- `strstr(const char*, const char*)`: Finds the first occurrence of a substring in a string.
 
-- **stdbool.h**
-  - Provides boolean type `bool` and values `true` and `false`
+### I/O Functions (`stdio.h`)
+Implements basic input/output and file operation functions:
+- `printf(char*, ...)`: Prints formatted output (supports `%s`, `%d`, `%f`, `%c`).
+- `scanf(const char*, ...)`: Reads formatted input (supports `%s`, `%d`, `%f`).
+- File operations:
+  - `open(const char*, int, int)`: Opens a file.
+  - `read(int, void*, size_t)`: Reads from a file.
+  - `write(int, const void*, size_t)`: Writes to a file.
+  - `close(int)`: Closes a file.
+- `exit(int)`: Exits the program.
 
-- **stdarg.h**
-  - Provides support for variadic arguments
+### Boolean Support (`stdbool.h`)
+Defines the `bool` type for older versions of C (before C23):
+- `bool`: Integer type representing boolean values.
+- `true` and `false`: Boolean constants.
+
+### Variadic Arguments (`stdarg.h`)
+Implements support for variadic arguments using macros such as `va_start`, `va_end`, `va_arg`, and `va_copy`.
 
 ### Custom Wrapper Compiler (`wcc`)
 The `wcc` tool is a custom wrapper for `gcc`, simplifying the inclusion of the MyLibc headers and shared libraries during compilation.
@@ -79,31 +102,33 @@ Here's a simple example showcasing the usage of MyLibc:
 
 ```c
 #include "include/stdio.h"
+#include "include/math.h"
 #include "include/string.h"
+#include "include/convert.h"
 
-void main() {
-    const char *filename = "hello.txt";
-    char buffer[1024];
-    ssize_t fd = open(filename, O_RDONLY, 0);
-    ssize_t bytes_read = read(fd, buffer, sizeof buffer - 1);
-    buffer[bytes_read] = '\0';
+int main() {
+    char *filename = "hello.txt";
+    char buf[1024];
+    int fd = open(filename, O_RDONLY, 0);
+    ssize_t bytes_read = read(fd, buf, sizeof(buf) - 1);
+    buf[bytes_read] = '\0';
 
-    strcat(buffer, "!");
-    printf("%s\n", strrchr(buffer, 'H'));
-    printf("There are %d characters.\n", strlen(buffer));
+    strcat(buf, ".514");
+    double result = atof(buf);
+    result = round(result);
+    printf("Rounded result: %f\n", result);
 
     close(fd);
-    exit(0);
+    return 0;
 }
 ```
 
 ### Output
 
-Assuming `hello.txt` contains the text `HHHHello, world`, the output of the program will be:
+Assuming `hello.txt` contains the text `123`, the output of the program will be:
 
 ```
-Hello, world!
-There are 16 characters.
+Rounded result: 123.000000
 ```
 
 ## Setup

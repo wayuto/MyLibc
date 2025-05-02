@@ -1,3 +1,7 @@
+/*
+ * This file was written to implement the variadic parameter list
+ * Tips: You have to compile your .c file by `gcc` if you included this file
+ */
 #ifndef ARG_H
 #define ARG_H
 

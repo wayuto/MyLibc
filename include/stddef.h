@@ -1,3 +1,6 @@
+/*
+ * This file was written to define some constants.
+ */
 #ifndef __STDDEF_H
 #define __STDDEF_H
 

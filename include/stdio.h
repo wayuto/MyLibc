@@ -1,3 +1,6 @@
+/*
+ * This file was written to implement I/O functions, including `printf`, `scanf` and files read and write.
+ */
 #ifndef IO_H
 #define IO_H
 

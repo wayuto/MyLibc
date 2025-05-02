@@ -1,3 +1,6 @@
+/*
+ * This file was written to implement some functions to manipulate the strings.
+ */
 #ifndef STRING_H
 #define STRING_H
 

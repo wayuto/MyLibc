@@ -1,9 +1,15 @@
+/*
+ * This header file was written to implement some type conversion functions.
+ * `iota` `iotf` `atoi` `ftoa`
+ */
+
 #ifndef CONVERT_H
 #define CONVERT_H
 
 #include "string.h"
 #include "stddef.h"
 
+// From `int` to `char*`
 void itoa(int64_t num, char *buffer) {
     int i = 0;
     int is_negative = 0;
@@ -31,6 +37,7 @@ void itoa(int64_t num, char *buffer) {
     }
 }
 
+// From `double` to `char*`
 void ftoa(double num, char *buffer) {
     int int_part = (int)num;
     double frac_part = num - int_part;
@@ -44,7 +51,8 @@ void ftoa(double num, char *buffer) {
     strcat(buffer, frac_buf);
 }
 
-int atoi(const char *buffer) {
+// From `char*` to `int`
+int64_t atoi(const char *buffer) {
     int sign = 1;
     int64_t result = 0;
     while (*buffer == ' ' || *buffer == '\t' || *buffer == '\n' || *buffer == '\r' || *buffer == '\f' || *buffer == '\v')
@@ -60,6 +68,7 @@ int atoi(const char *buffer) {
     return sign * result;
 }
 
+// From `char*` to `double`
 double atof(const char *buffer) {
     double value = 0.0;
     int sign = 1;
