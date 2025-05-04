@@ -19,37 +19,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1ea1f6-7384-4647-a503-3c9ef3f12fbf" name="Changes" comment="Rsync">
-      <change afterPath="$PROJECT_DIR$/asm/malloc.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asm/syscall.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/malloc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/stdlib.h" afterDir="false" />
-      <change afterPath="$USER_HOME$/Project/mylibc/asm/malloc.asm" afterDir="false" />
-      <change afterPath="$USER_HOME$/Project/mylibc/asm/syscall.asm" afterDir="false" />
-      <change afterPath="$USER_HOME$/Project/mylibc/include/malloc.h" afterDir="false" />
-      <change afterPath="$USER_HOME$/Project/mylibc/include/stdlib.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asm/io.asm" beforeDir="false" afterPath="$PROJECT_DIR$/asm/io.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/convert.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/convert.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/math.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/math.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/stdarg.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/stdarg.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/stdio.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/stdio.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/string.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/string.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assm/exec" beforeDir="false" afterPath="$PROJECT_DIR$/../assm/exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assm/hello" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assm/hello.o" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Project/mylibc/.idea/WorkSpace.iml" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Project/mylibc/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Project/mylibc/.idea/vcs.xml" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$USER_HOME$/Project/mylibc/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Project/mylibc/README.md" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/README.md" afterDir="false" />
-      <change beforePath="$USER_HOME$/Project/mylibc/asm/io.asm" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/asm/io.asm" afterDir="false" />
-      <change beforePath="$USER_HOME$/Project/mylibc/hello.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/Project/mylibc/include/convert.h" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/include/convert.h" afterDir="false" />
-      <change beforePath="$USER_HOME$/Project/mylibc/include/math.h" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/include/math.h" afterDir="false" />
-      <change beforePath="$USER_HOME$/Project/mylibc/include/stdarg.h" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/include/stdarg.h" afterDir="false" />
-      <change beforePath="$USER_HOME$/Project/mylibc/include/stdio.h" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/include/stdio.h" afterDir="false" />
-      <change beforePath="$USER_HOME$/Project/mylibc/include/string.h" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/include/string.h" afterDir="false" />
       <change beforePath="$USER_HOME$/Project/mylibc/main.c" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/main.c" afterDir="false" />
+      <change beforePath="$USER_HOME$/Project/mylibc/setup.sh" beforeDir="false" afterPath="$USER_HOME$/Project/mylibc/setup.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,17 +35,17 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/Project/mylibc" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:wayuto/codes&quot;,
-    &quot;accountId&quot;: &quot;9b02a1bb-6721-41c7-966a-7b33a285330c&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:wayuto/MyLibc.git",
+    "accountId": "9b02a1bb-6721-41c7-966a-7b33a285330c"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -727,8 +702,10 @@
   "keyToString": {
     "C/C++ File.main.c (1).executor": "Debug",
     "C/C++ File.main.c.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -778,7 +755,8 @@
       <workItem from="1746066502286" duration="227000" />
       <workItem from="1746067128287" duration="34297000" />
       <workItem from="1746178606970" duration="3936000" />
-      <workItem from="1746319944946" duration="14861000" />
+      <workItem from="1746319944946" duration="15130000" />
+      <workItem from="1746337103560" duration="763000" />
     </task>
     <task id="LOCAL-00001" summary="Rsync">
       <option name="closed" value="true" />
