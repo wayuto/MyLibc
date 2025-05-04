@@ -5,11 +5,34 @@
 #define STRING_H
 
 #include "stdbool.h"
+#include "stdarg.h"
+#include "stddef.h"
 
 int strlen(const char *s) {
     int len = 0;
     for (;s[len] != '\0'; len++);
     return len;
+}
+
+bool strcmp_all(const char *s1, ...) {
+    if (!s1) return false;
+
+    va_list ap;
+    va_start(ap, s1);
+
+    const char *s2;
+    while (s2 = va_arg(ap, const char *)) {
+        for (const char *p1 = s1, *p2 = s2; ; p1++, p2++) {
+            if (*p1 != *p2) {
+                va_end(ap);
+                return false;
+            }
+            if (!*p1) break;
+        }
+    }
+
+    va_end(ap);
+    return true;
 }
 
 bool strcmp(const char *s1, const char *s2) {
@@ -19,6 +42,18 @@ bool strcmp(const char *s1, const char *s2) {
         if (s1[i] != s2[i])
             return false;
     return true;
+}
+
+int strncmp(const char *s1, const char *s2, size_t n) {
+    for (size_t i = 0; i < n; i++) {
+        if (s1[i] != s2[i]) {
+            return (unsigned char)s1[i] - (unsigned char)s2[i];
+        }
+        if (s1[i] == '\0') {
+            return 0;
+        }
+    }
+    return 0;
 }
 
 char* strcpy(char *dest, const char *src) {
@@ -61,6 +96,28 @@ char* strstr(const char *s, const char *needle) {
         if (*h == '\0') break;
     }
     return (void *)0;
+}
+
+void *memcpy(void *dest, const void *src, size_t n) {
+    if (dest == NULL || src == NULL || n == 0) return dest;
+    char *d = (char *)dest;
+    const char *s = (const char *)src;
+
+    for (size_t i = 0; i < n; i++)
+        d[i] = s[i];
+
+    return dest;
+}
+
+void *memset(void *s, char c, size_t n) {
+    if (s == NULL || n == 0) return s;
+    unsigned char *p = (unsigned char *)s;
+    unsigned char uc = (unsigned char)c;
+
+    for (size_t i = 0; i < n; i++)
+        p[i] = uc;
+
+    return s;
 }
 
 #endif //STRING_H

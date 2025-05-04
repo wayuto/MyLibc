@@ -104,4 +104,4 @@ double atof(const char *buffer) {
     return sign * value;
 }
 
-#endif //CONVERT_H
+#endif // CONVERT_H

@@ -1,8 +1,8 @@
 /*
  * This file was written to implement I/O functions, including `printf`, `scanf` and files read and write.
  */
-#ifndef IO_H
-#define IO_H
+#ifndef STDIO_H
+#define STDIO_H
 
 #define O_RDONLY    0
 #define O_WRONLY    1
@@ -24,7 +24,6 @@ int open(const char *path, int flags, int mode);
 ssize_t read(int fd, void *buf, size_t count);
 ssize_t write(int fd, const void *buf, size_t count);
 int close(int fd);
-void exit(int status);
 
 #ifdef __cplusplus
 }
@@ -61,8 +60,8 @@ void printf(char *buffer, ...) {
                 }
                 case 'c': {
                     int v = va_arg(args, int);
-                    char buf[2] = {(char)(v), '\0'};
-                    i++;
+                    char buf[2] = {(char)v, '\0'};
+                    i++, i++;
                     couts(buf);
                 }
                 default: {
@@ -116,4 +115,4 @@ void scanf(const char *type, ...) {
     va_end(args);
 }
 
-#endif // IO_H
+#endif // STDIO_H

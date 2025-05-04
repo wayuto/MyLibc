@@ -51,8 +51,3 @@ cins:
     .done:
         pop rbp
         ret
-
-exit:
-    mov rax, 60
-    syscall
-    ret

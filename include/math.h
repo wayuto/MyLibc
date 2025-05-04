@@ -106,4 +106,4 @@ double hypot(double x, double y) {
 }
 /* --- */
 
-#endif
+#endif // MATH_H
